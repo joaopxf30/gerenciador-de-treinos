@@ -30,11 +30,11 @@ Para ativação do ambiente virutal, execute o seguinte comando de acordo com a 
 source <path>/env/bin/activate
 ```
 
-O ambiente virtual será cirado.
+O ambiente virtual será criado.
 
 ## Instalando dependências
 
-Todas as dependências do projeto se encontram no arquivo `requirements.txt`. A obtenção é feita da execução do seguinte comando a partir da raiz do projeto.
+Todas as dependências do projeto se encontram no arquivo `requirements.txt`. A obtenção é feita a partir da execução do seguinte comando na raiz do projeto:
 
 ```
 pip install -r requirements.txt
@@ -44,7 +44,7 @@ As dependências são instaladas.
 
 ## APIs do projeto
 
-Para utilizar as APIs direcionadas à funcionalidade do esportista ou do treino, assim como acessar a documentação dessas, é necessário executar o segundo comando:
+Para utilizar as APIs direcionadas à funcionalidade do esportista ou do treino, assim como acessar a documentação dessas, é necessário executar previamente o seguinte comando na raiz do projeto:
 
 ```
 (env)$ flask run --host 0.0.0.0 --port 5001
