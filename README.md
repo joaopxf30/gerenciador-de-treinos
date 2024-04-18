@@ -6,7 +6,7 @@ Este pequeno projeto, intitulado controlador de treinos, compõe o MVP desenvolv
 ---
 ## Ambientes virtuais
 
-É fortemente recomendado a utilização de ambientes virtuais. Para tal, execute no terminal a partir de um <path> desejado o seguinte comando de acordo com o sistema operacional:
+É fortemente recomendado a utilização de ambientes virtuais. Para tal, execute no terminal a partir de um path desejado o seguinte comando de acordo com o sistema operacional:
 
 **WINDOWS**:
 ```
