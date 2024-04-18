@@ -4,9 +4,7 @@ Este pequeno projeto, intitulado controlador de treinos, compõe o MVP desenvolv
 
 
 ---
-## Ambiente de Desenvolvimento
-
-### Ambientes virtuais
+## Ambientes virtuais
 
 É fortemente recomendado a utilização de ambientes virtuais. Para tal, execute no terminal a partir de um <path> desejado o seguinte comando de acordo com o sistema operacional:
 
@@ -34,12 +32,36 @@ source <path>/env/bin/activate
 
 O ambiente virtual será cirado.
 
-### Instalando dependências
+## Instalando dependências
 
-Todas as dependências do projeto se encontram no arquivo `requirements.txt`. A obtenção é feita da execução do seguinte comando a partir da raiz `meu_app_api`.
+Todas as dependências do projeto se encontram no arquivo `requirements.txt`. A obtenção é feita da execução do seguinte comando a partir da raiz do projeto.
 
 ```
 pip install -r requirements.txt
 ```
 
 As dependências são instaladas.
+
+## APIs do projeto
+
+Para utilizar as APIs direcionadas à funcionalidade do esportista ou do treino, assim como acessar a documentação dessas, é necessário executar o segundo comando:
+
+```
+(env)$ flask run --host 0.0.0.0 --port 5001
+```
+
+### Documentação das APIs
+
+A documentação das APIs se encontra disponibilizada no Swagger através do seguinte caminho: http://127.0.0.1:5001/openapi/swagger.
+
+## Aspectos gerais
+
+### Linguagem de programação
+
+A linguagem utilizada no back-end é Python na versão 3.11.2.
+
+### Banco de dados
+
+O SGBD adotado é o SQLite e a interação entre o servidor de dados e o banco de dados é feita por ORM através do SQLAlchemy.
+
+
