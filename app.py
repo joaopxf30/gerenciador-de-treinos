@@ -232,8 +232,8 @@ def cria_um_treino(form: TreinoSchema):
     }
 )
 def deleta_treino(query: TreinoBuscaSchema):
-    """Deleta um treino a partir da chave primára, \
-    composta pelo nome do esportista, a data do \
+    """Deleta um treino a partir da composição \
+    dada pelo nome do esportista, a data do \
     treino e a modalidade praticada. 
     
     

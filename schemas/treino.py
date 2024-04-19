@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict, AliasGenerator, field_serializer, field_validator
+from pydantic import BaseModel, ConfigDict, AliasGenerator, field_serializer, field_validator, Field
 from pydantic.alias_generators import to_camel, to_snake
 from datetime import time, date, datetime
 from typing import Iterable, Optional, Any
@@ -11,9 +11,9 @@ class TreinoSchema(BaseModel):
     nome_esportista: str = "João Pedro Xavier Freitas"
     data_treino: date = date(2024, 4, 14)
     esporte: str = "Corrida"
-    duracao: Optional[time] = None
-    calorias: Optional[int] = None
-    bpm: Optional[int] = None
+    duracao: Optional[time] = Field(default=None, description="Valor tipo string hh:mm:ss opcional")
+    calorias: Optional[int] = Field(default=None, description="Valor tipo integer opcional")
+    bpm: Optional[int] = Field(default=None, description="Valor tipo integer opcional")
 
     model_config = ConfigDict(
         alias_generator=AliasGenerator(
@@ -38,7 +38,17 @@ class TreinoViewSchema(BaseModel):
         alias_generator=AliasGenerator(
             validation_alias=to_snake,
             serialization_alias=to_camel,
-        )
+        ),
+        json_schema_extra={
+            "example": {
+                "nomeEportista": "João Pedro Xavier Freitas",
+                "dataTreino": "14/04/2024",
+                "esporte": "Corrida",
+                "duracao": "00:30:00",
+                "calorias": 300,
+                "bpm": 160
+            }
+        }
     )
 
     @field_serializer("data_treino")

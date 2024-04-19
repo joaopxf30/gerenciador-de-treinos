@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict, AliasGenerator
+from pydantic import BaseModel, ConfigDict, AliasGenerator, Field
 from pydantic.alias_generators import to_camel, to_snake
 from typing import Iterable, Any, Optional
 from model import Esportista
@@ -9,8 +9,8 @@ class EsportistaSchema(BaseModel):
     """
     nome_completo: str = "João Pedro Xavier Freitas"
     idade: int = 26
-    altura: Optional[float] = None
-    peso: Optional[float] = None
+    altura: Optional[float] = Field(default=None, description="Valor tipo float opcional")
+    peso: Optional[float] = Field(default=None, description="Valor tipo float opcional")
     
     model_config = ConfigDict(
         alias_generator=AliasGenerator(
@@ -23,17 +23,25 @@ class EsportistaSchema(BaseModel):
 class EsportistaViewSchema(BaseModel):
     """Define como um novo esportista deve ser visualizado
     """
-    nome_completo: str = "João Pedro Xavier Freitas"
-    idade: int = 26
-    altura: Optional[float] = None
-    peso: Optional[float] = None
+    nome_completo: str
+    idade: int
+    altura: Optional[float] = Field(default=None)
+    peso: Optional[float] = Field(default=None)
 
     model_config = ConfigDict(
         from_attributes=True,
         alias_generator=AliasGenerator(
             validation_alias=to_snake,
             serialization_alias=to_camel,
-        )
+        ),
+        json_schema_extra={
+            "example": {
+                "nomeCompleto": "João Pedro Xavier Freitas",
+                "idade": 26,
+                "altura": 1.80,
+                "peso": 75.0
+            }
+        }
     )
 
 
@@ -79,7 +87,6 @@ class EsportistaDeletadoSchema(BaseModel):
     """
     message: str
     nome: str = "João Pedro Xavier Freitas"
-    quantidade_treinos: int = 4
 
 
         
