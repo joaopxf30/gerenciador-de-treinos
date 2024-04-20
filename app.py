@@ -208,7 +208,7 @@ def cria_um_treino(form: TreinoSchema):
         if nome_do_erro == "SQLITE_CONSTRAINT_PRIMARYKEY":
             # A tripla nome, data e esporte é uma chave primária, logo não pode haver 
             # mais tuplas com essa característica
-            error_msg = "Já existe um treino do atleta dessa modalidade registrado na referida data"
+            error_msg = f"Já existe um treino para {form.nome_esportista} de {form.esporte} registrado em {form.data_treino}"
         else:
             # Cenário em que o esportista não foi registrado previamente, não respeitando
             # a integridade referencial

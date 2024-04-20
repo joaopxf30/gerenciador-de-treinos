@@ -47,7 +47,7 @@ As dependências são instaladas.
 Para utilizar as APIs direcionadas à funcionalidade do esportista ou do treino, assim como acessar a documentação dessas, é necessário executar previamente o seguinte comando na raiz do projeto:
 
 ```
-(env)$ flask run --host 0.0.0.0 --port 5001
+flask run --host 0.0.0.0 --port 5001
 ```
 
 ### Documentação das APIs
